@@ -1,15 +1,15 @@
 :root{
-    --cor-fundo: #4B0082;
+    --cor-fundo: #001725;
     --cor-principal: #00FF00;
-    --cor-secundária:#363636;
-    --cor-destaque:	#8B0000;
-    --cor-texto: #FFFAFA;
+    --cor-secundaria:#363636;
+    --cor-destaque:	#ffffff;
+    --cor-texto: #f5f5f5;
 }
 body{
     background-color: var(--cor-fundo);
     color:var(--cor-texto);
     display:flex;
-    justify-content: canter;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
@@ -17,4 +17,9 @@ body{
     background-color: var(--cor-fundo);
     width: 90%;
     max-width: 600px;
+text-align: center;
+padding: 20px;
+}
+h1{
+    color: var(--cor-destaque);
 }
