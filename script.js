@@ -11,34 +11,65 @@ const perguntas = [ //serve para abrir lista de perguntas
             afirmação: "afirmação da alternativa"},   
             
             {texto:"não",
-             afirmação,"afirmação da alternativa"}
+             afirmação:"afirmação da alternativa"}
             ]
     },
     {
         enunciado: "è possível que a IA se torne ainda mais dominante no nosso dia a dia?",
-        alternativas: [{"texto:sim"},{"não"}]
+        alternativas: [{texto:"sim",
+        afirmação: "afirmação da alternativa"}
+        ]
+        
+        [{texto:"não",
+        afirmação:"afirmação da alternativa"}
+        ]
     },
     {
         enunciado: "A IA está se tornando mais presente na vidas das pessoas?",
-        alternativas: ["sim","não"]
+        alternativas: [{texto:"sim",
+        afirmação: "afirmação da alternativa"}
+        ]
+        
+        [{texto:"não",
+        afirmação:"afirmação da alternativa"}
+        ] 
     },
       
 {
     enunciado: "Você utiliza da IA em tarefas diárias?",
-    alternativas: ["sim","não"]
+    alternativas: [{texto:"sim",
+    afirmação: "afirmação da alternativa"}
+    ]
+    
+    [{texto:"não",
+    afirmação:"afirmação da alternativa"}
+    ]
 },
     {
     enunciado: "Você é usuário ativo das IA's??",
-    alternativas: ["sim","não"]
+    alternativas: [{texto:"sim",
+    afirmação: "afirmação da alternativa"}
+    ]
+    
+    [{texto:"não",
+    afirmação:"afirmação da alternativa"}
+    ]
     },
 {
     enunciado: "A IA é perigosa?",
-    alternativas: ["sim","não"]
+    alternativas: [{texto:"sim",
+    afirmação: "afirmação da alternativa"}
+    ]
+    
+    [{texto:"não",
+    afirmação:"afirmação da alternativa"}
+    ]
 }
 ]
 
 let posicao = 0;
 let perguntaAtual;
+let historiafinal= "";
 
 function mostraPergunta(){
     perguntaAtual = perguntas[posicao];
@@ -48,9 +79,17 @@ function mostraPergunta(){
 function mostraAlternativas(){
     for(const alternativa of perguntaAtual.alternativas){
         const botaoalternativas = document.createElement("button");
-        botaoalternativas.textContent = alternativa;
+        botaoalternativas.textContent = alternativa.texto;
+        botaoalternativas.addEventListener("click",()=>respostaselecionada(alternativa));
         caixaAlternativas.appendChild(botaoalternativas)
     }
 }
+function respostaselecionada(opcaoselecionada){
+   const afirmacoes =opcaoselecionada.afirmação;
+   historiafinal = afirmacoes;
+    posicao++
+    mostraPergunta();
+}
 
 mostraPergunta();
+
